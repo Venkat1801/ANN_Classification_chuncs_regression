@@ -51,11 +51,12 @@ geo_encoded_df=pd.DataFrame(geo_encoded,columns=onehotencoder_geo.get_feature_na
 input_data=pd.concat([input_data.reset_index(drop=True),geo_encoded_df],axis=1)
 
 #Scale the input data
-input_data_scaled=scaler.trasform(input_data)
+input_data_scaled=scaler.transform(input_data)
 
 ##predict churn 
 prediction=model.predict(input_data_scaled)
 predicted_salary=prediction[0][0]
 
 st.write(f'Predicted estimated salary:${predicted_salary:.2f}')
+
 
