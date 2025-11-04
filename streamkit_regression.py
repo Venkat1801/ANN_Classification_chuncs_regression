@@ -28,7 +28,7 @@ exited=st.selectbox('Exited',[0,1])
 tenure=st.slider('Tenure',0,10)
 num_of_products=st.slider('Number of products',1,4)
 has_cr_card=st.selectbox('Has credit card',[0,1])
-is_active_member=st.selectbox('Is Active Number',[0,1])
+is_active_member=st.selectbox('Is Active Member',[0,1])
 
 #prepare the input input data
 input_data=pd.DataFrame({
@@ -39,7 +39,7 @@ input_data=pd.DataFrame({
     'Balance':[balance],
     'NumOfProducts':[num_of_products],
     'HasCrCard':[has_cr_card],
-    'IsActiveNumber':[is_active_member],
+    'IsActiveMember':[is_active_member],
     'Exited':[exited]
 })
 
@@ -58,5 +58,6 @@ prediction=model.predict(input_data_scaled)
 predicted_salary=prediction[0][0]
 
 st.write(f'Predicted estimated salary:${predicted_salary:.2f}')
+
 
 
